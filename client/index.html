@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./main.js" defer></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>It's business time</title>
+  </head>
+  <body>
+    <header>
+      <h1>IT'S BUSINESS TIME!!!</h1>
+    </header>
+    <main>
+      <button id="btn-open-popup">Click to Open <br />Form here</button>
+      <div id="popupOverlay">
+        <div id="popup-box">
+          <form action="" id="message-form">
+            <label for="name">Name:</label> <br />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your name..."
+              required
+            />
+            <br />
+            <label for="location">location</label><br />
+            <input type="text" id="locaton" placeholder="location " required />
+            <br />
+            <label for="textBox">Text Box:</label> <br />
+            <textarea
+              id="textBox"
+              name="textBox"
+              rows="4"
+              columns="12"
+              maxlength="255"
+              placeholder="Type here"
+              required
+            ></textarea>
+            <br />
+            <button id="submitButton" type="submit">Submit</button>
+          </form>
+          <button id="btn-close-popup">Close</button>
+        </div>
+      </div>
+      <div id="message-container"></div>
+    </main>
+    <footer>
+      <h3>Team Spice Hut</h3>
+    </footer>
+  </body>
+</html>
