@@ -1,5 +1,5 @@
 body {
-  background-color: dimgray;
+  background-color: teal;
 }
 
 h1 {
@@ -8,21 +8,40 @@ h1 {
   text-shadow: 2px 2px 2px #333;
 }
 
+nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  background-color: peru;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-button:hover,
+.tab-button.active {
+  background-color: rgb(187, 71, 4);
+}
+
 #btn-open-popup {
-  margin: 0;
-  top: 29vh;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: block; /* Makes it a block element */
+  margin: 20px auto; /* Center it horizontally with top/bottom margin */
   padding: 12px 24px;
   font-size: 18px;
   background-color: peru;
   color: white;
-  text-shadow: 2px 2px 2px #333;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-align: center; /* Center text inside the button */
 }
 
 #btn-open-popup:hover {
@@ -58,39 +77,25 @@ h1 {
   flex-direction: column;
 }
 
-#form {
-  display: flex;
-  flex-direction: column;
-}
-
-#form-label {
-  margin-bottom: 10px;
-  font-size: 16px;
-  color: #444;
-  text-align: left;
-}
-
-#submitButton {
-  margin-top: 12px;
-  background-color: peru;
-  color: #fff;
-}
-
+#submitButton,
 #btn-close-popup {
   margin-top: 12px;
   background-color: peru;
   color: #fff;
+  cursor: pointer;
 }
 
-#submitButton:hover {
-  background-color: rgb(187, 71, 4);
-}
-
+#submitButton:hover,
 #btn-close-popup:hover {
   background-color: rgb(187, 71, 4);
 }
 
-#message-container {
+.message-container {
+  display: none;
+}
+
+.message-container.active {
+  display: block;
   margin-top: 20px;
   padding: 10px;
   background-color: white;
@@ -102,20 +107,7 @@ h1 {
   padding: 15px;
   border: solid 1px #ddd;
   border-radius: 5px;
-  background-color: dimgray;
+  background-color: #f9f9f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow-wrap: break-word;
-  color: salmon;
-  text-shadow: 2px 2px 2px #333;
-}
-footer {
-  text-align: center;
-  color: salmon;
-  margin-top: 20px;
-  text-shadow: 2px 2px 2px #333;
-  border-radius: 8px;
-  border: solid 1px #ddd;
-  padding: 10px;
-  background-color: dimgray;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

@@ -29,19 +29,33 @@ app.get("/", (req, res) => {
 });
 
 app.get("/data", async (req, res) => {
-  const query = await db.query(`SELECT * FROM data`);
+  const board = req.query.board;
+  if (!board) {
+    return res.status(400).json({ error: "Board is required" });
+  }
+  const query = await db.query("SELECT * FROM data WHERE board = $1", [board]);
   res.json(query.rows);
-  console.log(query);
 });
 
 app.post("/add-data", async (req, res) => {
-  const { name, location, message_post } = req.body;
-  const result = await db.query(
-    `INSERT INTO data(name, location, message_post, likes)
-    VALUES ($1, $2, $3, 0) RETURNING *`,
-    [name, location, message_post]
-  );
-  res.json(result.rows[0]);
+  const { name, location, message_post, board } = req.body;
+
+  // Validate inputs
+  if (!name || !location || !message_post || !board) {
+    return res.status(400).json({ error: "All fields are required" });
+  }
+
+  try {
+    const result = await db.query(
+      `INSERT INTO data(name, location, message_post, likes, board, timestamp)
+      VALUES ($1, $2, $3, 0, $4, CURRENT_TIMESTAMP) RETURNING *`,
+      [name, location, message_post, board]
+    );
+    res.json(result.rows[0]);
+  } catch (error) {
+    console.error("Database error:", error);
+    res.status(500).json({ error: "Database error" });
+  }
 });
 
 app.post("/data/:id/like", async (req, res) => {
