@@ -1,71 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="./main.js" defer></script>
     <link rel="stylesheet" href="./style.css" />
     <title>It's Business Time</title>
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <h1>IT'S BUSINESS TIME!!!</h1>
+        <h1>IT'S BUSINESS TIME!!!</h1>
     </header>
     <nav>
-      <button class="tab-button" data-board="chat">Chat</button>
-      <button class="tab-button" data-board="health-and-wellness">
-        Health and Wellness
-      </button>
-      <button class="tab-button" data-board="advice">Advice</button>
+        <button class="tab-button" data-board="chat">Chat</button>
+        <button class="tab-button" data-board="health-and-wellness">Health and Wellness</button>
+        <button class="tab-button" data-board="advice">Advice</button>
     </nav>
     <main>
-      <!-- Popup button -->
-      <button id="btn-open-popup">Click to Open <br />Form here</button>
+        <!-- Popup button for opening the message form -->
+        <button id="btn-open-popup">Click to Open <br />Form here</button>
 
-      <!-- Popup overlay and form -->
-      <div id="popupOverlay">
-        <div id="popup-box">
-          <form id="message-form">
-            <label for="name">Name:</label> <br />
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Your name..."
-              required
-            />
-            <br />
-            <label for="location">Location:</label> <br />
-            <input
-              type="text"
-              id="location"
-              name="location"
-              placeholder="Your location..."
-              required
-            />
-            <br />
-            <label for="textBox">Text Box:</label> <br />
-            <textarea
-              id="textBox"
-              name="textBox"
-              rows="4"
-              maxlength="255"
-              placeholder="Type here"
-              required
-            ></textarea>
-            <br />
-            <button id="submitButton" type="submit">Submit</button>
-          </form>
-          <button id="btn-close-popup">Close</button>
+        <!-- Popup overlay and form -->
+        <div id="popupOverlay">
+            <div id="popup-box">
+                <form id="message-form">
+                    <label for="name">Name:</label><br />
+                    <input type="text" id="name" name="name" placeholder="Your name..." required />
+                    <br />
+                    <label for="location">Location:</label><br />
+                    <input type="text" id="location" name="location" placeholder="Your location..." required />
+                    <br />
+                    <label for="textBox">Text Box:</label><br />
+                    <textarea id="textBox" name="textBox" rows="4" maxlength="255" placeholder="Type here" required></textarea>
+                    <br />
+                    <button id="submitButton" type="submit">Submit</button>
+                </form>
+                <button id="btn-close-popup">Close</button>
+            </div>
         </div>
-      </div>
 
-      <div id="chat" class="message-container active"></div>
-      <div id="health-and-wellness" class="message-container"></div>
-      <div id="advice" class="message-container"></div>
+        <!-- Dynamic message containers for each board -->
+        <div id="chat" class="message-container active"></div>
+        <div id="health-and-wellness" class="message-container"></div>
+        <div id="advice" class="message-container"></div>
+        <div id="loading" class="loading-indicator" style="display:none;">Loading...</div>
     </main>
     <footer>
-      <h3>Team Spice Hut</h3>
+        <h3>Team Spice Hut</h3>
     </footer>
-  </body>
+</body>
 </html>
