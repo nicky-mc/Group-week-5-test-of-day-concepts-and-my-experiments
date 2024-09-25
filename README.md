@@ -1,6 +1,6 @@
 # Group-week-5- my testing ground to indulge my more over reaching ideas for proof of concepts
 
-##Current functions 
+## Current functions 
 
 
 
@@ -74,15 +74,15 @@ This web application consists of a structured client side that utilizes HTML, CS
 
 
 
-##Issues 
+## Issues 
 
 
-Data entered returns as undefined and empty 
+# Data entered returns as undefined and empty 
 
 
-##Potential changes, 
+## Potential changes, 
 
-modernising of look and feel of the page, centralising of footer text with social media connections. 
+# modernising of look and feel of the page, centralising of footer text with social media connections. 
 
 
 
